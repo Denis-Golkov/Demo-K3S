@@ -2,6 +2,8 @@
 
 A quick, comprehensive guide to deploying a lightweight, production-ready K3s Kubernetes cluster on Ubuntu servers.
 
+The entire installation and demo deployment process was performed on Google Cloud Platform (GCP).
+
 ---
 
 ## 📋 Prerequisites
@@ -10,6 +12,24 @@ Before starting, ensure your system meets the following minimum requirements:
 * **OS:** Ubuntu 22.04 LTS, 24.04 LTS, or newer
 * **Resources:** Minimum 1 CPU core, 512MB RAM (2GB recommended)
 * **Networking:** Open inbound port `6443` for the Kubernetes API server
+
+---
+
+## ⚙️ Automated Setup
+
+Run the repository-hosted scripts to install and configure K3s, then deploy the demo application.
+
+### Install and Configure K3s
+
+```bash
+curl -sfL https://raw.githubusercontent.com/Denis-Golkov/Demo-K3S/refs/heads/main/install-k3s.sh | sudo sh
+```
+
+### Deploy the Demo Application
+
+```bash
+curl -sfL https://raw.githubusercontent.com/Denis-Golkov/Demo-K3S/refs/heads/main/DemoAppDeployment.sh | sudo sh
+```
 
 ---
 

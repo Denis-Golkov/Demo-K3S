@@ -19,7 +19,7 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 # 3. Install K3s Server
 echo "📥 Downloading and installing K3s Control Plane..."
-curl -sfL https://k3s.io | sh -
+curl -sfL https://get.k3s.io | sh -
 
 # 4. Configure permissions for the current non-root user
 echo "🔑 Configuring kubectl permissions for user: $USER..."

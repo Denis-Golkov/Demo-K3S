@@ -1,4 +1,3 @@
-sudo apt install git -y
 git clone https://github.com/Denis-Golkov/k8s.git
 cd k8s/k8s/
 sudo kubectl apply -f postgres-pv.yaml

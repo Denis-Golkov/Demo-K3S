@@ -9,7 +9,7 @@ echo "=========================================="
 
 # 1. Update and install dependencies
 echo "📦 Updating system packages..."
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade && sudo apt install git -y
 sudo apt install curl wget -y
 
 # 2. Disable Swap

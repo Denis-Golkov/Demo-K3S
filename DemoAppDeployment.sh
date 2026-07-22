@@ -5,3 +5,4 @@ sudo kubectl apply -f db.yaml
 sudo kubectl apply -f be.yaml
 sudo kubectl apply -f fe.yaml
 sudo kubectl apply -f tppfe-nodeport.yaml
+sudo kubectl get pod

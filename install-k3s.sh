@@ -22,7 +22,7 @@ if ! grep -q "KUBECONFIG" "$HOME/.bashrc"; then
 fi
 export KUBECONFIG="$HOME/.kube/config"
 
-sleep 5 
+sleep 55 
 kubectl get nodes
 
 sudo cat /var/lib/rancher/k3s/server/node-token

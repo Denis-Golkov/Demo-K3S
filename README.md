@@ -12,6 +12,7 @@ Before starting, ensure your system meets the following minimum requirements:
 * **OS:** Ubuntu 22.04 LTS, 24.04 LTS, or newer
 * **Resources:** Minimum 1 CPU core, 512MB RAM (2GB recommended)
 * **Networking:** Open inbound port `6443` for the Kubernetes API server
+* https://docs.k3s.io/installation/requirements?os=debian
 
 ---
 

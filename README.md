@@ -43,7 +43,7 @@ sudo apt update && sudo apt upgrade -y
 
 # Install dependencies
 sudo apt install curl wget -y
-
+sudo apt install git -y
 # Disable swap (Required for Kubernetes stability)
 sudo swapoff -a
 sudo sed -i '/ swap / s/^.*\$/#\1/g' /etc/fstab
@@ -56,7 +56,7 @@ sudo sed -i '/ swap / s/^.*\$/#\1/g' /etc/fstab
 Execute the official Rancher utility script to download and initialize the K3s control plane.
 
 ```bash
-curl -sfL https://k3s.io | sh -
+curl -sfL https://get.k3s.io | sh -
 ```
 *Note: This automatically configures a systemd service to manage K3s and ensures it restarts on host reboots.*
 

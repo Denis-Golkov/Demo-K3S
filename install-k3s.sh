@@ -12,18 +12,20 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 curl -sfL https://get.k3s.io | sh -
 
-mkdir -p "$HOME/.kube"
-sudo cp /etc/rancher/k3s/k3s.yaml "$HOME/.kube/config"
-sudo chown "$USER:$USER" "$HOME/.kube/config"
-chmod 600 "$HOME/.kube/config"
+REAL_USER="${SUDO_USER:-$USER}"
+REAL_HOME=$(eval echo "~$REAL_USER")
 
-if ! grep -q "KUBECONFIG" "$HOME/.bashrc"; then
-    echo "export KUBECONFIG=\$HOME/.kube/config" >> "$HOME/.bashrc"
+mkdir -p "$REAL_HOME/.kube"
+sudo cp /etc/rancher/k3s/k3s.yaml "$REAL_HOME/.kube/config"
+sudo chown "$REAL_USER:$REAL_USER" "$REAL_HOME/.kube/config"
+chmod 600 "$REAL_HOME/.kube/config"
+
+if ! grep -q "KUBECONFIG" "$REAL_HOME/.bashrc"; then
+    echo "export KUBECONFIG=$REAL_HOME/.kube/config" >> "$REAL_HOME/.bashrc"
 fi
-export KUBECONFIG="$HOME/.kube/config"
+export KUBECONFIG="$REAL_HOME/.kube/config"
 
-sleep 15
+sleep 5
 kubectl get nodes
 
 sudo cat /var/lib/rancher/k3s/server/node-token
-

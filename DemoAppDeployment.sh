@@ -12,3 +12,5 @@ sudo kubectl apply -f fe.yaml
 sudo kubectl apply -f tppfe-nodeport.yaml
 sleep 35
 sudo kubectl get pod
+
+echo "<WAN-IP>:<30081>"

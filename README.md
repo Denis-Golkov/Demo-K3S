@@ -47,7 +47,7 @@ sudo apt install curl wget -y
 sudo apt install git -y
 # Disable swap (Required for Kubernetes stability)
 sudo swapoff -a
-sudo sed -i '/ swap / s/^.*\$/#\1/g' /etc/fstab
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 
 ---
@@ -73,7 +73,7 @@ mkdir -p ~/.kube
 
 # Copy administrative configuration
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
-sudo chown USER:USER ~/.kube/config
+sudo chown $USER:$USER ~/.kube/config
 chmod 600 ~/.kube/config
 
 # Set environment variable

@@ -6,7 +6,7 @@ The entire installation and demo deployment process was performed on Google Clou
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before starting, ensure your system meets the following minimum requirements:
 * **OS:** Ubuntu 22.04 LTS, 24.04 LTS, or newer
@@ -15,7 +15,7 @@ Before starting, ensure your system meets the following minimum requirements:
 
 ---
 
-## ⚙️ Automated Setup
+## Automated Setup
 
 Run the repository-hosted scripts to install and configure K3s, then deploy the demo application.
 
@@ -33,7 +33,7 @@ curl -sfL https://raw.githubusercontent.com/Denis-Golkov/Demo-K3S/refs/heads/mai
 
 ---
 
-## 🛠️ Step 1: System Preparation
+## Step 1: System Preparation
 
 Log into your Ubuntu machine, update system packages, and install required dependencies.
 
@@ -51,7 +51,7 @@ sudo sed -i '/ swap / s/^.*\$/#\1/g' /etc/fstab
 
 ---
 
-## 🚀 Step 2: Install K3s Server (Control Plane)
+## Step 2: Install K3s Server (Control Plane)
 
 Execute the official Rancher utility script to download and initialize the K3s control plane.
 
@@ -62,7 +62,7 @@ curl -sfL https://get.k3s.io | sh -
 
 ---
 
-## 🔑 Step 3: Configure Non-Root User Access
+## Step 3: Configure Non-Root User Access
 
 By default, cluster access is restricted to the root user. Run the following commands to grant your current Ubuntu user administrative permissions.
 
@@ -82,7 +82,7 @@ echo "export KUBECONFIG=~/.kube/config" >> ~/.bashrc
 
 ---
 
-## 🔍 Step 4: Verify the Cluster
+## Step 4: Verify the Cluster
 
 Test your connection to the cluster and check the health of your newly created node.
 
@@ -93,7 +93,7 @@ kubectl get nodes
 
 ---
 
-## 👥 Optional: Add Worker Nodes
+## Optional: Add Worker Nodes
 
 To scale your deployment into a multi-node cluster, expand your environment with worker nodes.
 
@@ -110,7 +110,7 @@ curl -sfL https://k3s.io | K3S_URL=https://<MASTER_IP>:6443 K3S_TOKEN=<NODE_TOKE
 
 ---
 
-## 🗑️ How to Uninstall
+## How to Uninstall
 
 If you need to wipe the installation and reset your host machines, execute the native cleanup scripts.
 
